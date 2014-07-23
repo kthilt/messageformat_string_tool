@@ -1,0 +1,12 @@
+.section_heading{
+	color: #000000;
+}
+
+
+.section{
+	margin: 10px;
+	padding: 5px 10px 10px 10px;
+	background-color: #DDDDDD;
+	min-height: 100px;
+	border-radius: 4px;
+}
