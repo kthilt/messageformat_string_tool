@@ -7,22 +7,52 @@
 
 	<div id="container">
 
-		<div id="editor" class="section">
-				<h3 class="section_heading">String Editor</h3>
-				<p id="editor_content"></p>
-		</div>
-
 		<div id="options" class="section">
+
 			<div class="section_padding">
-				<h3 class="section_heading">Options Editor</h3>
-				<p id="options_content"></p>
+
+				<h3 class="section_heading">Add a New Option</h3>
+
+				<div id="options_content">
+
+					<select id="option_select_primary">
+						<option value="empty">Select an option...</option>
+						<option value="GENDER">GENDER</option>
+						<option value="PLURAL">PLURAL</option>
+						<option value="NUMBER">NUMBER</option>
+					</select>
+
+					<div id="option_select_secondary"></div>
+
+					<input id="add_button" type="button" value="Add Option">
+
+				</div>
+
 			</div>
 		</div>
 
+		<div id="editor" class="section">
+
+				<h3 class="section_heading">String Editor</h3>
+
+				<p>Use the field below to type your translation, starting at the beginning of the message. When you reach a part that needs to change based on gender or plural, use the "Add a New Option" panel above.<p><br/>
+
+				<input id="editor_content">
+
+		</div>
+
 		<div id="preview" class="section">
+
 			<div class="section_padding">
+
 				<h3 class="section_heading">Preview</h3>
+				<span>with Gender:</span>
+				<select id="preview_gender_select"></select>
+				<span>Plural:</span>
+				<select id="preview_plural_select"></select>
+
 				<p id="preview_content"></p>
+
 			</div>
 		</div>
 
