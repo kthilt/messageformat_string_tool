@@ -1,4 +1,4 @@
 {
-	"gender": "test"
-
+	"gender": ["male", "female", "other"],
+	"plural": ["one", "other"]
 }

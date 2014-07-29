@@ -63,6 +63,11 @@
 
 				<h3 class="section_heading">String Editor</h3>
 
+				<div>
+					What language are you going to type in the field below?
+					<select id="editor_locale_select" onchange = "locale_dropdown_onchange()"></select>
+				</div>
+
 				<p>Use the field below to type your translation. When you reach a dynamically inserted number or a section that needs to change based on gender or plural, use the "Add a New Option" panel above.<p><br/>
 
 				<textarea id="editor_content" rows="4" onkeyup="reset_preview()" onchange="reset_preview()"></textarea>
