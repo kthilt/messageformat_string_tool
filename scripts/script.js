@@ -301,10 +301,7 @@ var add_button_onclick = function(panel_number, target_input_field_id)
 
 var preview_button_onclick = function()
 {
-	var preview_text = document.getElementById("preview_content_text");
-	preview_text.style.color = "#000000";
-	preview_text.innerHTML = document.getElementById("editor_content").value;
-	preview_text.innerHTML += "<br/>TODO: Include messageformat.js and compile with the above as input."
+	require(["thirdparty/messageformat"], compile_preview);
 }
 
 var locale_dropdown_onchange = function()
@@ -323,6 +320,29 @@ var locale_dropdown_onchange = function()
 	}
 }
 
+var compile_preview = function(messageformat)
+{
+	var preview_text = document.getElementById("preview_content_text");
+	var preview_string = new messageformat();
+	var gender_value = document.getElementById("preview_gender_select").value;
+	var plural_value = document.getElementById("preview_plural_select").value;
+	var number_value = document.getElementById("preview_number_input").value;
+
+	preview_string = preview_string.compile(document.getElementById("editor_content").value);
+
+	try
+	{
+		preview_string = preview_string({"GENDER": gender_value, "PLURAL": plural_value, "NUMBER": number_value});
+		preview_text.innerHTML = preview_string;
+	} 
+	catch(error)
+	{
+		preview_text.innerHTML = "There was an error compiling what you entered in the string editor.";
+	}
+
+	preview_text.style.color = "#000000";
+}
+
 var reset_preview = function()
 {
 	var preview_text = document.getElementById("preview_content_text");
@@ -333,5 +353,3 @@ var reset_preview = function()
 //is undefined when I try to self-call? So I guess:
 reset_preview();
 //to be sloppy.
-
-

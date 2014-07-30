@@ -7,37 +7,54 @@
 
 	<div id="container">
 
-		<div id="options" class="section">
+		<div id="editor" class="section">
 
-				<div id="options_panel_1" class="options_panel">	
+			<div id="editor_panel">
 
-					<div id="options_content_1">
+				<h2 class="section_heading">String Editor</h2>
 
-						<h3 class="section_heading">Add New Option</h3>
+				<div>
+					What language are you going to type in the field below?
+					<select id="editor_locale_select" onchange = "locale_dropdown_onchange()"></select>
+				</div>
 
-						<select id="option_select_primary_1">
-							<option value="empty">Select an option...</option>
-							<option value="gender">GENDER</option>
-							<option value="plural">PLURAL</option>
-							<option value="number">NUMBER</option>
-						</select>
+				<p>Use the field below to type your translation. When you reach a dynamically inserted number or a section that needs to change based on gender or plural, use the "Add a New Option" panel above.<p><br/>
 
-						<div id="option_select_secondary_1" style="visibility:hidden"></div>
+				<textarea id="editor_content" rows="4" onkeyup="reset_preview()" onchange="reset_preview()"></textarea>
 
-						<input id="add_button_1" type="button" value="Add Option" style="visibility:hidden" onclick="add_button_onclick(1, 'editor_content')">
-						<input id="cancel_button_1" type="button" value="Cancel" style="visibility:hidden" onclick="cancel_button_onclick(1)">
+			</div>
 
-					</div>
+			<div id="disabled_message_editor" class="disabled_message" style="visibility:hidden">Please finish adding your option below.</div>
 
-					<div id="disabled_message_1" class="disabled_message" style="visibility:hidden">Please finish adding your option on the right.</div>
+			<div id="options_panel_1" class="options_panel">	
+
+				<div id="options_content_1">
+
+					<h3 class="subheading">Add New Option</h3>
+
+					<select id="option_select_primary_1">
+						<option value="empty">Select an option...</option>
+						<option value="gender">GENDER</option>
+						<option value="plural">PLURAL</option>
+						<option value="number">NUMBER</option>
+					</select>
+
+					<div id="option_select_secondary_1" style="visibility:hidden"></div>
+
+					<input id="add_button_1" type="button" value="Add Option" style="visibility:hidden" onclick="add_button_onclick(1, 'editor_content')">
+					<input id="cancel_button_1" type="button" value="Cancel" style="visibility:hidden" onclick="cancel_button_onclick(1)">
 
 				</div>
+
+				<div id="disabled_message_1" class="disabled_message" style="visibility:hidden">Please finish adding your option on the right.</div>
+
+			</div>
 
 			<div id="options_panel_2" class="options_panel" style="display:none">
 
 				<div id="options_content_2">
 
-					<h3 id="options_panel_2_heading" class="section_heading"></h3>
+					<h3 id="options_panel_2_heading" class="subheading"></h3>
 
 					<select id="option_select_primary_2">
 						<option value="empty">Select an option...</option>
@@ -55,48 +72,25 @@
 
 			</div>
 
-		</div>
-
-		<div id="editor" class="section">
-
-			<div id="editor_panel">
-
-				<h3 class="section_heading">String Editor</h3>
-
-				<div>
-					What language are you going to type in the field below?
-					<select id="editor_locale_select" onchange = "locale_dropdown_onchange()"></select>
-				</div>
-
-				<p>Use the field below to type your translation. When you reach a dynamically inserted number or a section that needs to change based on gender or plural, use the "Add a New Option" panel above.<p><br/>
-
-				<textarea id="editor_content" rows="4" onkeyup="reset_preview()" onchange="reset_preview()"></textarea>
-
-				
-
-			</div>
-
-			<div id="disabled_message_editor" class="disabled_message" style="visibility:hidden">Please finish adding your option above.</div>
-		</div>
+		</div>	
 
 		<div id="preview" class="section">
 
-			<div class="section_padding">
+			<h2 class="section_heading">Preview</h2>
+			<span>GENDER:</span>
+			<select id="preview_gender_select"></select>
+			<span>PLURAL:</span>
+			<select id="preview_plural_select"></select>
+			<span>NUMBER:</span>
+			<input id="preview_number_input" placeholder="Enter your number">
+			<input id="preview_button" type="button" value="Show Preview" onclick="preview_button_onclick()">
 
-				<h3 class="section_heading">Preview</h3>
-				<span>GENDER:</span>
-				<select id="preview_gender_select"></select>
-				<span>PLURAL:</span>
-				<select id="preview_plural_select"></select>
-				<input id="preview_button" type="button" value="Show Preview" onclick="preview_button_onclick()">
-
-				<div id="preview_content">
-					<br/>
-					<div id="preview_content_text"></div>
-					<br/>
-				</div>
-
+			<div id="preview_content">
+				<br/>
+				<div id="preview_content_text"></div>
+				<br/>
 			</div>
+
 		</div>
 
 	</div>
@@ -104,7 +98,8 @@
 </body>
 
 <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
-<script type="text/javascript" src="scripts/script.js"></script>
-<!--<script data-main="scripts/script" src="scripts/require.js"></script>-->
+<!--<script type="text/javascript" src="scripts/thirdparty/messageformat.dev.js"></script>
+<script type="text/javascript" src="scripts/script.js"></script>-->
+<script data-main="scripts/script" src="scripts/thirdparty/require.js"></script>
 
 </html>
