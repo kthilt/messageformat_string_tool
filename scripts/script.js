@@ -3,13 +3,83 @@
 //Could be populated using filenames in the /locale directory?
 //Only problem with that is that you'd have "en" but not "English"
 //unless you add another key to en.json that's "name" or something
+//Also, have them appear sorted alphabetically to the user,
+//not alphabetically in the code by language code
+
+//Names for the language codes in included_locales
+//(for example, knowing "Welsh" corresponds to "cy")
+//mostly come from http://search.cpan.org/~sburke/I18N-LangTags/lib/I18N/LangTags/List.pm
 
 var locale_data;
 var included_locale_option_array = [];
 var included_locales = 
 {
+	af: "Afrikaans",
+	am: "Amharic",
 	ar: "Arabic",
-	en: "English"
+	bg: "Bulgarian",
+	bn: "Bengali",
+	br: "Breton",
+	ca: "Catalan",
+	cs: "Czech",
+	cy: "Welsh",
+	da: "Danish",
+	de: "German",
+	el: "Greek",
+	en: "English",
+	es: "Spanish",
+	et: "Estonian",
+	eu: "Basque",
+	fa: "Persian",
+	fi: "Finnish",
+	fr: "French",
+	ga: "Irish",
+	gl: "Galician",
+	gsw: "gsw (Name Unknown)",
+	gu: "Gujarati",
+	he: "Hebrew",
+	hi: "Hindi",
+	hr: "Croatian",
+	hu: "Hungarian",
+	id: "Indonesian",
+	is: "Icelandic",
+	it: "Italian",
+	ja: "Japanese",
+	kn: "Kannada",
+	ko: "Korean",
+	lag: "lag (Name Unknown)",
+	ln: "Lingala",
+	lt: "Lithuanian",
+	lv: "Latvian",
+	mk: "Macedonian",
+	ml: "Malayalam",
+	mo: "Moldavian",
+	mr: "Marathi",
+	ms: "Malay",
+	mt: "Maltese",
+	nl: "Dutch",
+	no: "Norwegian",
+	or: "Oriya",
+	pl: "Polish",
+	pt: "Portuguese",
+	ro: "Romanian",
+	ru: "Russian",
+	shi: "shi (Name Unknown)",
+	sk: "Slovak",
+	sl: "Slovenian",
+	sq: "Albanian",
+	sr: "Serbian",
+	sv: "Swedish",
+	sw: "Swahili",
+	ta: "Tamil",
+	te: "Telugu",
+	th: "Thai",
+	tl: "Tagalog",
+	tr: "Turkish",
+	uk: "Ukrainian",
+	ur: "Urdu",
+	vi: "Vietnamese",
+	zh: "Chinese"
 }
 
 if(!localStorage.getItem("current_locale"))

@@ -1,0 +1,4 @@
+{
+	"gender": ["male", "female", "other"],
+	"plural": ["one", "two", "few", "other"]
+}
